@@ -9,9 +9,9 @@ import base64
 #接口地址
 url ="http://ltpapi.xfyun.cn/v2/sa"
 #开放平台应用ID
-x_appid = "5fca4198"
+x_appid = ""
 #开放平台应用接口秘钥
-api_key = "315af78182250a0d0a99e1a406941641"
+api_key = ""
 #语言文本
 # TEXT="woc,这也太牛逼了吧"
 

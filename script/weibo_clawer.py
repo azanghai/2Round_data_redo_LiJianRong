@@ -96,7 +96,7 @@ def weibo_comment_clawer(weiboid, weibocookie, like_number):
 
 if __name__ == '__main__':
     # get_cookie = get_weibo_cookie()
-    get_cookie = [{'domain': '.weibo.cn', 'expiry': 1667252417, 'httpOnly': False, 'name': 'MLOGIN', 'path': '/', 'secure': False, 'value': '1'}, {'domain': '.weibo.cn', 'expiry': 1667248832, 'httpOnly': True, 'name': 'mweibo_short_token', 'path': '/', 'secure': False, 'value': 'ea37a57483'}, {'domain': '.weibo.cn', 'expiry': 1667249417, 'httpOnly': True, 'name': 'M_WEIBOCN_PARAMS', 'path': '/', 'secure': False, 'value': 'oid%3D4499476460497308%26luicode%3D20000061%26lfid%3D4499476460497308%26uicode%3D20000061%26fid%3D4499476460497308'}, {'domain': '.m.weibo.cn', 'expiry': 1667250017, 'httpOnly': False, 'name': 'XSRF-TOKEN', 'path': '/', 'secure': False, 'value': '39f1ac'}, {'domain': '.weibo.cn', 'expiry': 1667318400, 'httpOnly': False, 'name': '_T_WM', 'path': '/', 'secure': False, 'value': '82992016664'}, {'domain': '.weibo.cn', 'httpOnly': False, 'name': 'SSOLoginState', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '1667248815'}, {'domain': '.weibo.cn', 'expiry': 1698784816, 'httpOnly': False, 'name': 'SUBP', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '0033WrSXqPxfM725Ws9jqgMF55529P9D9WhxZmwFe0k.rqkSWdj1mrnO5NHD95QNSo2cehMNS0-EWs4Dqcje-JH09g8Eqcn_MGS4'}, {'domain': '.weibo.cn', 'httpOnly': True, 'name': 'WEIBOCN_FROM', 'path': '/', 'secure': False, 'value': '1110006030'}, {'domain': '.weibo.cn', 'expiry': 1698784816, 'httpOnly': True, 'name': 'SUB', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '_2A25OZEL_DeRhGeFI6lQR9ynLzj6IHXVtp263rDV6PUJbktANLVfkkW1NfVvt0V5qCwDy7xTi9szGqZYAkUS46xkz'}]
+    get_cookie =
     weibo_ID_list = [4499476460497308, 4763174139593887]
     for weiboid in weibo_ID_list:
-        weibo_comment_clawer(weiboid=weiboid,weibocookie=get_cookie,like_number=50)
+        weibo_comment_clawer(weiboid=weiboid, weibocookie=get_cookie, like_number=50)
