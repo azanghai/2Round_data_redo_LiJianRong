@@ -91,13 +91,15 @@ def douyin_comment_clawer(douyinid,
     wb = openpyxl.Workbook()
     destfile = f'../raw_data/douyin_raw_data/douyin_data/douyin_{douyinid}_{str(time.strftime("%Y_%m_%d_%H_%M_%S", time.localtime()))}.xlsx'
     ws1 = wb.active
-    row_control = 1
+    row_control = 0
     for i in sep_res:
+        row_control = row_control + 1
+        print(row_control)
         name = i.find_element(by=By.CLASS_NAME, value=name_class_name)
-        ws1.cell(row_control,1).value = name.text
+        ws1.cell(row_control, 1).value = name.text
         comment = i.find_element(by=By.CLASS_NAME, value=comment_first).find_element(by=By.CLASS_NAME,
-                                                                                  value=comment_second)
-        ws1.cell(row_control,2).value = comment.text
+                                                                                     value=comment_second)
+        ws1.cell(row_control, 2).value = comment.text
         try:
             at_someone = i.find_element(by=By.CLASS_NAME, value=at_someone_class)
         except:
@@ -119,7 +121,7 @@ def douyin_comment_clawer(douyinid,
         except:
             print('at_someone:')
         print(f'like number:{like.text}\ncomment time{comment_time.text}\n-----------------')
-        row_control = row_control+1
+
     wb.save(filename=destfile)
     driver.close()
 
