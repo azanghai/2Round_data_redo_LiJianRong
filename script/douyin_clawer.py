@@ -94,7 +94,7 @@ def douyin_comment_clawer(douyinid,
     row_control = 0
     for i in sep_res:
         row_control = row_control + 1
-        print(row_control)
+        # print(row_control)
         name = i.find_element(by=By.CLASS_NAME, value=name_class_name)
         ws1.cell(row_control, 1).value = name.text
         comment = i.find_element(by=By.CLASS_NAME, value=comment_first).find_element(by=By.CLASS_NAME,
