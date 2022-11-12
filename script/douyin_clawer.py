@@ -134,9 +134,9 @@ if __name__ == '__main__':
                           comment_area_class_name='sX7gMtFl.comment-mainContent',
                           like_class_value='eJuDTubq',
                           block_class_name='RHiEl2d8',
-                          reply_comment_class_name = 'nNNp3deF',
+                          reply_comment_class_name='nNNp3deF',
                           name_class_name='Nu66P_ba.NCRZnxVF',
                           comment_first='YzbzCgxU',
                           comment_second='Nu66P_ba.undefined',
                           at_someone_class='B3AsdZT9.DxCF1YBq.VQCdkeKT',
-                          time_class_name='dn67MYhq')
+                          time_class_name='L4ozKLf7')
