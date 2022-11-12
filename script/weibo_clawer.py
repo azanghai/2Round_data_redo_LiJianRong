@@ -66,7 +66,7 @@ def weibo_comment_clawer(weiboid, weibocookie, like_number):
         except:
             break
     while True:
-        print('small 200')
+        # print('small 200')
         if len(driver.find_elements(by=By.CLASS_NAME, value='lite-bot.m-text-cut')) < 200:
             # find the last comment and scroll
             iframe = driver.find_elements(by=By.CLASS_NAME, value='lite-bot.m-text-cut')[-1]
@@ -77,6 +77,8 @@ def weibo_comment_clawer(weiboid, weibocookie, like_number):
             time.sleep(5)
             # sleep 5 second to avoid being blocked
         elif redo_count > 20:
+            break
+        else:
             break
 
     print('finding complete, start to save data')
