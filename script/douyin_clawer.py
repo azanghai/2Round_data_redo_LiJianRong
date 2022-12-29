@@ -1,11 +1,15 @@
 import time
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
+
 import openpyxl
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+
 
 def get_douyin_cookie():
-    cookie_driver = webdriver.Chrome()
+    cookie_driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     cookie_driver.get(url='https://www.douyin.com/video/7094445702536760590')
     time.sleep(5)
     cookie_driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
@@ -35,7 +39,7 @@ def douyin_comment_clawer(douyinid,
                           comment_first,
                           comment_second,
                           at_someone_class):
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     Url = f'https://www.douyin.com/video/{douyinid}'
     driver.get(url=Url)
     for singledict in douyincookie:
@@ -136,7 +140,7 @@ if __name__ == '__main__':
                           block_class_name='RHiEl2d8',
                           reply_comment_class_name='nNNp3deF',
                           name_class_name='Nu66P_ba.NCRZnxVF',
-                          comment_first='YzbzCgxU',
-                          comment_second='Nu66P_ba.undefined',
+                          comment_first='a9uirtCT',
+                          comment_second='Nu66P_ba',
                           at_someone_class='B3AsdZT9.DxCF1YBq.VQCdkeKT',
                           time_class_name='L4ozKLf7')
