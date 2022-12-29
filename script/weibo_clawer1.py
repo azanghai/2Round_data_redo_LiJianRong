@@ -101,29 +101,13 @@ def weibo_comment_clawer(weiboid, weibocookie, like_number):
 if __name__ == '__main__':
     # get_cookie = get_weibo_cookie()
     get_cookie = [
-        {'domain': '.weibo.cn', 'expiry': 1668182400, 'httpOnly': False, 'name': '_T_WM', 'path': '/', 'secure': False,
-         'value': '17473971605'},
-        {'domain': '.weibo.cn', 'expiry': 1699717150, 'httpOnly': True, 'name': 'SUB', 'path': '/', 'sameSite': 'None',
-         'secure': True,
-         'value': '_2A25OahzODeRhGeRL71MQ9SzPzzmIHXVtlKSGrDV6PUJbkdAKLVnQkW1NUwSjJXj1i7KoYvCmrEhkEIEULfJEp0o6'},
-        {'domain': '.weibo.cn', 'expiry': 1668184750, 'httpOnly': False, 'name': 'MLOGIN', 'path': '/', 'secure': False,
-         'value': '1'},
-        {'domain': '.weibo.cn', 'expiry': 1668181165, 'httpOnly': True, 'name': 'mweibo_short_token', 'path': '/',
-         'secure': False, 'value': 'c2b3384c55'},
-        {'domain': '.weibo.cn', 'expiry': 1668181442, 'httpOnly': True, 'name': 'loginScene', 'path': '/',
-         'secure': False, 'value': '102003'},
-        {'domain': '.m.weibo.cn', 'expiry': 1699717119, 'httpOnly': False, 'name': 'FPTOKEN', 'path': '/',
-         'secure': False,
-         'value': '30$3QmnzozkP/lRG2q1ec1GJg9rc+deA5zs7qaIs9AUgmM2lR5fx11Nu662TevAEWsswKicOSjOdxFFU9yTiDRbkfWhDwxv14cYAtjUn7AzqHaOpQugMREIwW91wnVXL+wLkjl48M8EQ3ncDNTQs7aV9XpqMn6akNYUmMqHoPyn3Q/SGZOGcv2d0YtOSmaD76gl3E3GMKTZJfLSdCUuOF+e3zyyNlm26xF0JIrMBzvDprSD4e3DADPre3apV4qjke08w1Kg/8amFpUorBpMc3PE3XCeKVhq0PaMXhclHm4UzTtorhaVZSyOAV81kBEDLevWNYn+FS6u0xmGO/mzOy68qUgcqSrhYRgdyVogS0eCv/i5dM6xF76/0yq8aqA860YodXr/SlBRMN0UK6+K3fhOQ5/PzPNnseLmqgUE/f+ojUU=|0Yt+kshimX1M5WprP7fctXjLT1IBkFaUgW9UIEXGrbg=|10|b377b763ee40607e3dffbd9c70e91e1b'},
-        {'domain': '.weibo.cn', 'expiry': 1668181750, 'httpOnly': True, 'name': 'M_WEIBOCN_PARAMS', 'path': '/',
-         'secure': False,
-         'value': 'oid%3D4499476460497308%26luicode%3D20000061%26lfid%3D4499476460497308%26uicode%3D20000061%26fid%3D4499476460497308'},
-        {'domain': '.m.weibo.cn', 'expiry': 1668182350, 'httpOnly': False, 'name': 'XSRF-TOKEN', 'path': '/',
-         'secure': False, 'value': '4a84ea'},
-        {'domain': '.weibo.cn', 'expiry': 1702741150, 'httpOnly': False, 'name': '__bid_n', 'path': '/',
-         'secure': False, 'value': '1846757d2d3615e7cf4207'},
-        {'domain': '.weibo.cn', 'httpOnly': True, 'name': 'WEIBOCN_FROM', 'path': '/', 'secure': False,
-         'value': '1110006030'}]
+        {'domain': '.weibo.cn', 'expiry': 1672063506, 'httpOnly': True, 'name': 'M_WEIBOCN_PARAMS', 'path': '/', 'secure': False, 'value': 'oid%3D4499476460497308%26luicode%3D20000061%26lfid%3D4499476460497308%26uicode%3D20000061%26fid%3D4499476460497308'}, {'domain': '.m.weibo.cn', 'expiry': 1672064106, 'httpOnly': False, 'name': 'XSRF-TOKEN', 'path': '/', 'secure': False, 'value': 'c14c45'},
+        {'domain': '.weibo.cn', 'expiry': 1672066506, 'httpOnly': False, 'name': 'MLOGIN', 'path': '/', 'secure': False, 'value': '1'}, {'domain': '.weibo.cn', 'expiry': 1672070401, 'httpOnly': False, 'name': '_T_WM', 'path': '/', 'secure': False, 'value': '82755656215'}, {'domain': '.weibo.cn', 'httpOnly': True, 'name': 'WEIBOCN_FROM', 'path': '/', 'secure': False, 'value': '1110006030'},
+        {'domain': '.weibo.cn', 'expiry': 1703598906, 'httpOnly': True, 'name': 'SUB', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '_2A25OrdfpDeRhGeRL71MQ9SzPzzmIHXVqUfmhrDV6PUJbkdANLWLnkW1NUwSjJWAfhckfsZg24DgpQ9eC3HPTaPpZ'}, {'domain': '.weibo.cn', 'expiry': 1672063193, 'httpOnly': True, 'name': 'loginScene', 'path': '/', 'secure': False, 'value': '102003'},
+        {'domain': '.weibo.cn', 'expiry': 1706622877, 'httpOnly': False, 'name': '__xaf_fpstarttimer__', 'path': '/', 'secure': False, 'value': '1672062877742'}, {'domain': '.weibo.cn', 'expiry': 1706622877, 'httpOnly': False, 'name': '__xaf_thstime__', 'path': '/', 'secure': False, 'value': '1672062877883'},
+        {'domain': '.weibo.cn', 'expiry': 1672149277, 'httpOnly': False, 'name': '__xaf_ths__', 'path': '/', 'secure': False, 'value': '{"data":{"0":1,"1":43200,"2":60},"id":"6179a2ce-5e16-4e2a-b481-763e72edd518"}'}, {'domain': '.weibo.cn', 'expiry': 1706622878, 'httpOnly': False, 'name': '__xaf_fptokentimer__', 'path': '/', 'secure': False, 'value': '1672062878107'},
+        {'domain': '.weibo.cn', 'expiry': 1706622878, 'httpOnly': False, 'name': 'FPTOKEN', 'path': '/', 'secure': False, 'value': 'E9aRdMnxpmFTeMWwFnZlsl2PAnm05Oi1W3TbnLyjQaeam/5hW2NT2Ha5jm5ZZpq/HpZAc+Xf66G29nOf+8Z7oBnV1vqX/BNYqqQCxt3MQrYeEOb6uZSsEKu6zQqQ8F4Na+zJfMxHhNTutUWFoQQnlN7rS9uQXj9SpVZyDlnbkiDQ6i9T9R8Na2CCmqyiwVC3Ccx/3AvfCLWV9eoFwlaBOpXCdoY5mgVVNjxMF2uGTXohqa8S9KYdwuZ4wIVA/qzw5GupWVsV9jZuipaUHBczO5ltN7oYW1jhhemN+0l42EEBxXXAEmX5UtJroKcldtZb2pK46vSbmCYX0VL/9DlE+FYu0ilFj+QzCr+zSQBxUY74bfhOOjM2NVjPmd5iun0bMqnWbZUH38LeOdtYsujOlhqZ3vlPvJkirPOGozwB+Vvw12X0NROyyE8cS2DcJFpt|UtacBJRs68cExVZYa+42ztBUrRdl1twbH1l+fHVXrDo=|10|e378cea8ab7bc434ed4ce7166af8c25d'},
+        {'domain': '.weibo.cn', 'expiry': 1706622907, 'httpOnly': False, 'name': '__bid_n', 'path': '/', 'secure': False, 'value': '1854eb6bfd4fb3ffff4207'}, {'domain': '.weibo.cn', 'expiry': 1706622877, 'httpOnly': False, 'name': 'FEID', 'path': '/', 'secure': False, 'value': 'v10-fe2d17a31d0aced8e6e5d85ff5e033ed8a518d56'}]
     weibo_ID_list = [4448352072484155]
     for weiboid in weibo_ID_list:
         weibo_comment_clawer(weiboid=weiboid, weibocookie=get_cookie, like_number=50)
