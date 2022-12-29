@@ -1,17 +1,18 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-import time
-import urllib.request
-import urllib.parse
-import json
-import hashlib
 import base64
+import hashlib
+import json
+import time
+import urllib.parse
+import urllib.request
+
 #接口地址
 url ="http://ltpapi.xfyun.cn/v2/sa"
 #开放平台应用ID
-x_appid = ""
+x_appid = "5fca4198"
 #开放平台应用接口秘钥
-api_key = ""
+api_key = "315af78182250a0d0a99e1a406941641"
 #语言文本
 # TEXT="woc,这也太牛逼了吧"
 

@@ -1,12 +1,14 @@
 import time
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
+
 import openpyxl
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 def get_weibo_cookie():
-    cookie_driver = webdriver.Chrome()
+    cookie_driver = webdriver.Chrome(ChromeDriverManager().install())
     cookie_driver.get(url='https://m.weibo.cn/detail/4499476460497308')
     time.sleep(5)
     cookie_driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
@@ -29,7 +31,7 @@ def weibo_comment_clawer(weiboid, weibocookie, like_number):
     # set_user_cookie was acquired from previous action
     # weibocookie = {'domain': '.weibo.cn', 'expiry': 1667227174, 'httpOnly': False, 'name': 'MLOGIN', 'path': '/', 'secure': False, 'value': '1'}, {'domain': '.weibo.cn', 'expiry': 1698759572, 'httpOnly': True, 'name': 'SUB', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '_2A25OW6BDDeRhGeNM7FAX-SfPzzWIHXVtp8ALrDV6PUJbktAKLXHFkW1NSesQgybbepw0EE4CmMChq7W0ghd64Tjl'}, {'domain': '.weibo.cn', 'httpOnly': True, 'name': 'WEIBOCN_FROM', 'path': '/', 'secure': False, 'value': '1110006030'}, {'domain': '.m.weibo.cn', 'expiry': 1698759520, 'httpOnly': False, 'name': 'FPTOKEN', 'path': '/', 'secure': False, 'value': '30$MdZ60r46+Tpj+6trHWibC/IXhM6KPC66kpG6Gw4G+uRxVp1SKFhwqWgk3zkVlMMlEFsNeuRheQ6E1ry+V/LfiZkirEfZUDY+jo0k1zH8Kd38rxx911uZVqL/I/Hg/hCroP9DyfZTLSiKJ3A3KsJTe9XhPFe9OlfHkZ+sEvHl59ItA72HTYkGu+qjeOIGPMMRdadoXrvqNLMN5Wcqa3PR8KS1sf9+n4G7jgJNXPGyDjvvxWx69qeAulzM2fTLZpB6M/7NybibfR2se+czlVlFS3O8ZxHUk8kpxPOxbKWCjNelmTvjcf3mUpqD9z2qMgXdJjuHnQtWEuLsjQS75JqIOYB6WYdBEtUqTGzMpwpLY1NlkCtuGa3DOo4+n8JUTowD|wQNbmrKCrjUVyep0P/i/a8d3tRRqD5codjl07X4jHkY=|10|9a510e7e0e217478c9f00ae22dbe97be'}, {'domain': '.weibo.cn', 'expiry': 1667224174, 'httpOnly': True, 'name': 'M_WEIBOCN_PARAMS', 'path': '/', 'secure': False, 'value': 'oid%3D4499476460497308%26luicode%3D20000061%26lfid%3D4499476460497308%26uicode%3D20000061%26fid%3D4499476460497308'}, {'domain': '.weibo.cn', 'expiry': 1701783520, 'httpOnly': False, 'name': '__bid_n', 'path': '/', 'secure': False, 'value': '1842e440286d5377954207'}, {'domain': '.m.weibo.cn', 'expiry': 1667224774, 'httpOnly': False, 'name': 'XSRF-TOKEN', 'path': '/', 'secure': False, 'value': '452db3'}, {'domain': '.weibo.cn', 'httpOnly': False, 'name': 'SSOLoginState', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '1667223571'}, {'domain': '.weibo.cn', 'expiry': 1698759572, 'httpOnly': False, 'name': 'SUBP', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '0033WrSXqPxfM725Ws9jqgMF55529P9D9WWviwglwWW76Tz5oCwh4lhh5NHD95QfeoMESo.4e0B4Ws4DqcjKi--RiK.NiKysTCH8SC-4SEHW15tt'}, {'domain': '.weibo.cn', 'expiry': 1667232001, 'httpOnly': False, 'name': '_T_WM', 'path': '/', 'secure': False, 'value': '72196962777'}
     # initiate chrome driver
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(ChromeDriverManager().install())
     Url = f'https://m.weibo.cn/detail/{weiboid}'
     driver.get(url=Url)
     for singledict in weibocookie:
@@ -67,7 +69,10 @@ def weibo_comment_clawer(weiboid, weibocookie, like_number):
             break
     while True:
         # print('small 200')
-        if len(driver.find_elements(by=By.CLASS_NAME, value='lite-bot.m-text-cut')) < 200:
+        if redo_count > 20:
+            break
+
+        elif len(driver.find_elements(by=By.CLASS_NAME, value='lite-bot.m-text-cut')) < 200:
             # find the last comment and scroll
             iframe = driver.find_elements(by=By.CLASS_NAME, value='lite-bot.m-text-cut')[-1]
             ActionChains(driver) \
@@ -76,8 +81,7 @@ def weibo_comment_clawer(weiboid, weibocookie, like_number):
             redo_count = redo_count + 1
             time.sleep(5)
             # sleep 5 second to avoid being blocked
-        elif redo_count > 20:
-            break
+
         else:
             break
 
