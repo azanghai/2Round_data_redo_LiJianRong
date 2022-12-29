@@ -4,13 +4,13 @@ from openpyxl import Workbook
 from openpyxl import load_workbook
 from DataProcessPack import get_sentiment
 
-dest_filename = r'C:\Users\Hmx\PycharmProjects\2Round_data_redo_LiJianRong\raw_data\douyin_raw_data\douyin_data\douyin_7073782200499571999_2022_11_12_21_56_51.xlsx'
+dest_filename = r'D:\pythonProject\2Round_data_redo_LiJianRong\raw_data\（评论数据）(1).xlsx'
 wb = load_workbook(filename=dest_filename)
 for st1 in wb:
     print('共{}条数据等待分析.....'.format(st1.max_row))
     print('-' * 20)
-    for i in range(1, st1.max_row + 1):
-        TextContent = st1.cell(i, 2).value
+    for i in range(3, st1.max_row + 1):
+        TextContent = st1.cell(i, 1).value
         try:
             ReturnData = get_sentiment(TextContent)
         except:
